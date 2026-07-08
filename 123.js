@@ -11,7 +11,7 @@ function getValues() {
         mac: get("mac") || "-",
         slot: get("interfaceNumber") || "0",
         port: get("ontNumber") || "0",
-        ont: get("ontNumber2") || "0",
+        ont: get("ontNumber2") ,
         service: get("servicePort") || "0",
         vlan: get("vlan") || "0",
         gem: get("gemport") || "5",
@@ -112,11 +112,11 @@ display service-port port 0/${d.slot}/${d.port} ont ${d.ont}
 
 btv
 
-igmp user add service-port ${d.multicast} no-auth
+igmp user add service-port ${d.service} no-auth
 
 multicast-vlan 300
 
-igmp multicast-vlan member service-port ${d.multicast}
+igmp multicast-vlan member service-port ${d.service}
 
 quit
 
@@ -300,5 +300,5 @@ quit
 
 quit
 
-display service-port port 0/${d.slot}/${d.port}  ${d.ont}`);
+display service-port port 0/${d.slot}/${d.port} ont ${d.ont}`);
 }
