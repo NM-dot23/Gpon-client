@@ -6,14 +6,14 @@ function getValues() {
     };
 
     return {
-        id: get("idValue") || "-",
-        sn: get("snAuth") || "-",
-        mac: get("mac") || "-",
-        slot: get("interfaceNumber") || "0",
-        port: get("ontNumber") || "0",
+        id: get("idValue") ,
+        sn: get("snAuth") ,
+        mac: get("mac"),
+        slot: get("interfaceNumber")  ,
+        port: get("ontNumber")  ,
         ont: get("ontNumber2") ,
-        service: get("servicePort") || "0",
-        vlan: get("vlan") || "0",
+        service: get("servicePort")  ,
+        vlan: get("vlan") ,
         gem: get("gemport") || "5",
         multicast: get("multicast") || "19"
     };
